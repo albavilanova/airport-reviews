@@ -1,18 +1,272 @@
 [
-    {
-        "id": 0,
-        "name": "Location 0",
-        "coordinates": [
-            40,
-            2
-        ]
-    },
-    {
-        "id": 1,
-        "name": "Location 1",
-        "coordinates": [
-            40,
-            0
-        ]
-    }
+	{
+		"id": 0,
+		"type": "airport",
+		"name": "Adolfo Suárez Madrid–Barajas Airport",
+		"coordinates": [
+			40.489507,
+			-3.564448
+		]
+	},
+	{
+		"id": 1,
+		"type": "airport",
+		"name": "Albacete Airport",
+		"coordinates": [
+			38.948333,
+			-1.863333
+		]
+	},
+	{
+		"id": 2,
+		"type": "airport",
+		"name": "Alicante Airport",
+		"coordinates": [
+			38.285483,
+			-0.560056
+		]
+	},
+	{
+		"id": 3,
+		"type": "airport",
+		"name": "Almería Airport",
+		"coordinates": [
+			36.847912,
+			-2.372424
+		]
+	},
+	{
+		"id": 4,
+		"type": "airport",
+		"name": "Badajoz Airport",
+		"coordinates": [
+			38.891111,
+			-6.821111
+		]
+	},
+	{
+		"id": 5,
+		"type": "airport",
+		"name": "Bilbao Airport",
+		"coordinates": [
+			43.302494,
+			-2.911116
+		]
+	},
+	{
+		"id": 6,
+		"type": "airport",
+		"name": "Burgos Airport",
+		"coordinates": [
+			42.3544529,
+			-3.6229563
+		]
+	},
+	{
+		"id": 7,
+		"type": "airport",
+		"name": "Federico García Lorca Granada-Jaén Airport",
+		"coordinates": [
+			37.1873133,
+			-3.7780425
+		]
+	},
+	{
+		"id": 8,
+		"type": "airport",
+		"name": "Fuerteventura Airport",
+		"coordinates": [
+			28.450411,
+			-13.869735
+		]
+	},
+	{
+		"id": 9,
+		"type": "airport",
+		"name": "Gran Canaria Airport",
+		"coordinates": [
+			27.9331848,
+			-15.3877066
+		]
+	},
+	{
+		"id": 10,
+		"type": "airport",
+		"name": "Ibiza Airport",
+		"coordinates": [
+			38.8748594,
+			1.3712232
+		]
+	},
+	{
+		"id": 11,
+		"type": "airport",
+		"name": "Jerez Airport",
+		"coordinates": [
+			36.7452935,
+			-6.0608778
+		]
+	},
+	{
+		"id": 12,
+		"type": "airport",
+		"name": "Josep Tarradellas Barcelona-El Prat Airport",
+		"coordinates": [
+			41.29822,
+			2.080074
+		]
+	},
+	{
+		"id": 13,
+		"type": "airport",
+		"name": "Lanzarote Airport",
+		"coordinates": [
+			28.950438,
+			-13.6057769
+		]
+	},
+	{
+		"id": 14,
+		"type": "airport",
+		"name": "Leon Airport",
+		"coordinates": [
+			42.588828,
+			-5.655768
+		]
+	},
+	{
+		"id": 15,
+		"type": "airport",
+		"name": "Lleida–Alguaire Airport",
+		"coordinates": [
+			41.7287705,
+			0.5430329
+		]
+	},
+	{
+		"id": 16,
+		"type": "airport",
+		"name": "Logroño-Agoncillo Airport",
+		"coordinates": [
+			42.4565629,
+			-2.3185068
+		]
+	},
+	{
+		"id": 17,
+		"type": "airport",
+		"name": "Matacan Airport",
+		"coordinates": [
+			40.9499705,
+			-5.5016502
+		]
+	},
+	{
+		"id": 18,
+		"type": "airport",
+		"name": "Menorca Airport",
+		"coordinates": [
+			39.86543,
+			4.225702
+		]
+	},
+	{
+		"id": 19,
+		"type": "airport",
+		"name": "Murcia International Airport",
+		"coordinates": [
+			37.8045377,
+			-1.1311951
+		]
+	},
+	{
+		"id": 20,
+		"type": "airport",
+		"name": "Murcia-San Javier Airport",
+		"coordinates": [
+			37.774722,
+			-0.812222
+		]
+	},
+	{
+		"id": 21,
+		"type": "airport",
+		"name": "Palma de Mallorca Airport",
+		"coordinates": [
+			39.5517407,
+			2.7361649
+		]
+	},
+	{
+		"id": 22,
+		"type": "airport",
+		"name": "Reus Airport",
+		"coordinates": [
+			41.147222,
+			1.166944
+		]
+	},
+	{
+		"id": 23,
+		"type": "airport",
+		"name": "Santander Airport",
+		"coordinates": [
+			43.423212,
+			-3.823748
+		]
+	},
+	{
+		"id": 24,
+		"type": "airport",
+		"name": "Seville Airport",
+		"coordinates": [
+			37.4201674,
+			-5.89305
+		]
+	},
+	{
+		"id": 25,
+		"type": "airport",
+		"name": "Tenerife South Airport",
+		"coordinates": [
+			28.0457718,
+			-16.576216
+		]
+	},
+	{
+		"id": 26,
+		"type": "airport",
+		"name": "Valencia Airport",
+		"coordinates": [
+			39.488228,
+			-0.484261
+		]
+	},
+	{
+		"id": 27,
+		"type": "airport",
+		"name": "Valladolid Airport",
+		"coordinates": [
+			41.7077881,
+			-4.8549209
+		]
+	},
+	{
+		"id": 28,
+		"type": "airport",
+		"name": "Vitoria Airport",
+		"coordinates": [
+			42.8834563,
+			-2.7311637
+		]
+	},
+	{
+		"id": 29,
+		"type": "airport",
+		"name": "Zaragoza Airport",
+		"coordinates": [
+			41.666111,
+			-1.0413889
+		]
+	}
 ]

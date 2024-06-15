@@ -21,7 +21,7 @@ export default function Search(Search: SearchProps) {
   const renderOptions = () => {
     return markers.map((location) => {
       return (
-        <SelectItem value={location.id.toString()}>{location.name}</SelectItem>
+        <SelectItem key={location.id.toString()} value={location.id.toString()}>{location.name}</SelectItem>
       );
     });
   };

@@ -8,7 +8,7 @@ import {
   ZoomControl,
   useMapEvents,
 } from "react-leaflet";
-
+import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
@@ -23,16 +23,22 @@ interface MapProps {
 }
 
 export default function Map(Map: MapProps) {
-  const zoom: number = 8;
-  const center: LatLngExpression | LatLngTuple = [40, 0];
+  const zoom: number = 6;
+  const center: LatLngExpression | LatLngTuple = [36.3, -8];
   const { markers } = Map;
   const [infoVisibility, setInfoVisibility] = useState<boolean>(false);
   const [location, setLocation] = useState<number | null>(null);
+
+  const airportIcon = new Icon({
+    iconUrl: "../airport.svg",
+    iconSize: [25, 55],
+  });
 
   const renderMarkers = () => {
     return markers.map((location) => {
       return (
         <Marker
+          key={location.id}
           position={location.coordinates}
           draggable={false}
           eventHandlers={{
@@ -41,6 +47,7 @@ export default function Map(Map: MapProps) {
               setLocation(location.id);
             },
           }}
+          icon={airportIcon}
         >
           <Popup>{location.name}</Popup>
         </Marker>
@@ -66,6 +73,8 @@ export default function Map(Map: MapProps) {
         scrollWheelZoom={true}
         style={{ height: "100%", width: "100%", zIndex: 1 }}
         zoomControl={false}
+        zoomSnap={0.1}
+        minZoom={zoom}
       >
         <MapEvents />
         <Search
