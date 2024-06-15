@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Marker,
-  useMap,
-} from "react-leaflet";
+import { Marker, useMap } from "react-leaflet";
 import { Icon } from "leaflet";
 import type { Location } from "@/lib/types";
 
@@ -19,7 +16,7 @@ export default function Markers(Markers: MarkersProps) {
   });
   const { markers, setInfoVisibility, setLocation } = Markers;
   const map = useMap();
-  return markers.map((location) => {
+  return markers.map((location: Location) => {
     return (
       <Marker
         key={location.id}

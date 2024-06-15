@@ -6,3 +6,12 @@ export type Location = {
   name: string;
   coordinates: LatLngExpression | LatLngTuple;
 };
+
+export type Review = {
+  id: number;
+  locationId: number;
+  rating: number;
+  comment: string;
+  date: string;
+  user: string;
+}

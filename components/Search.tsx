@@ -19,9 +19,11 @@ interface SearchProps {
 export default function Search(Search: SearchProps) {
   const { markers, setInfoVisibility, setLocation } = Search;
   const renderOptions = () => {
-    return markers.map((location) => {
+    return markers.map((location: Location) => {
       return (
-        <SelectItem key={location.id.toString()} value={location.id.toString()}>{location.name}</SelectItem>
+        <SelectItem key={location.id.toString()} value={location.id.toString()}>
+          {location.name}
+        </SelectItem>
       );
     });
   };
@@ -37,7 +39,7 @@ export default function Search(Search: SearchProps) {
         }}
       >
         <SelectTrigger>
-          <SelectValue placeholder="Select airport"/>
+          <SelectValue placeholder="Select airport" />
         </SelectTrigger>
         <SelectContent>{renderOptions()}</SelectContent>
       </Select>

@@ -13,17 +13,18 @@ import Search from "@/components/Search";
 import Info from "@/components/Info";
 import Markers from "@/components/Markers";
 import { useState } from "react";
-import type { Location } from "@/lib/types";
+import type { Location, Review } from "@/lib/types";
 import { LatLngExpression, LatLngTuple } from "leaflet";
 
 interface MapProps {
   markers: Location[];
+  reviews: Review[]
 }
 
 export default function Map(Map: MapProps) {
   const zoom: number = 5.5;
   const center: LatLngExpression | LatLngTuple = [36.3, -8];
-  const { markers } = Map;
+  const { markers, reviews } = Map;
   const [infoVisibility, setInfoVisibility] = useState<boolean>(false);
   const [location, setLocation] = useState<number | null>(null);
 
@@ -47,6 +48,7 @@ export default function Map(Map: MapProps) {
           <Info
             location={location}
             markers={markers}
+            reviews={reviews}
             setInfoVisibility={setInfoVisibility}
             setLocation={setLocation}
           />
