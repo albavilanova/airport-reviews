@@ -18,10 +18,12 @@ interface Location {
 
 interface SearchProps {
   markers: Location[];
+  setInfoVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+  setLocation: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 export default function Search(Search: SearchProps) {
-  const { markers } = Search;
+  const { markers, setInfoVisibility, setLocation } = Search;
   const renderOptions = () => {
     return markers.map((location) => {
       return (
@@ -32,15 +34,16 @@ export default function Search(Search: SearchProps) {
   const map = useMap();
 
   return (
-    <div className="absolute inset-0 z-[1000] w-1/3 h-20">
+    <div className="absolute z-[1000] w-1/3 h-20 p-2">
       <Select
         onValueChange={(event) => {
-          console.log("select-value", typeof event);
-          map.setView(markers[parseInt(event) - 1].coordinates, 12);
+          map.setView(markers[parseInt(event)].coordinates, 12);
+          setInfoVisibility(true);
+          setLocation(parseInt(event));
         }}
       >
-        <SelectTrigger className="w-[160px] m-2">
-          <SelectValue placeholder="Select location" />
+        <SelectTrigger>
+          <SelectValue placeholder="Select location" className="text-lg" />
         </SelectTrigger>
         <SelectContent>{renderOptions()}</SelectContent>
       </Select>
