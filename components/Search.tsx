@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { LatLngExpression, LatLngTuple } from "leaflet";
+import { useMap } from "react-leaflet";
 
 interface Location {
   id: number;
@@ -28,15 +29,21 @@ export default function Search(Search: SearchProps) {
       );
     });
   };
+  const map = useMap();
 
   return (
-    <Select>
-      <SelectTrigger className="w-[160px] m-2">
-        <SelectValue placeholder="Select location" />
-      </SelectTrigger>
-      <SelectContent>
-        {renderOptions()}
-      </SelectContent>
-    </Select>
+    <div className="absolute inset-0 z-[1000] w-1/3 h-20">
+      <Select
+        onValueChange={(event) => {
+          console.log("select-value", typeof event);
+          map.setView(markers[parseInt(event) - 1].coordinates, 12);
+        }}
+      >
+        <SelectTrigger className="w-[160px] m-2">
+          <SelectValue placeholder="Select location" />
+        </SelectTrigger>
+        <SelectContent>{renderOptions()}</SelectContent>
+      </Select>
+    </div>
   );
 }

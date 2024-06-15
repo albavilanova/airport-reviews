@@ -12,6 +12,7 @@ import { LatLngExpression, LatLngTuple } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
+import Search from "@/components/Search";
 
 interface Location {
   id: number;
@@ -20,13 +21,13 @@ interface Location {
 }
 
 interface MapProps {
-  center: LatLngExpression | LatLngTuple;
-  zoom: number;
   markers: Location[];
 }
 
 const Map = (Map: MapProps) => {
-  const { zoom, center, markers } = Map;
+  const zoom: number = 8;
+  const center: LatLngExpression | LatLngTuple = [40, 0];
+  const { markers } = Map;
   const renderMarkers = () => {
     return markers.map((location) => {
       return (
@@ -38,19 +39,20 @@ const Map = (Map: MapProps) => {
   };
 
   return (
-    <MapContainer
-      center={center}
-      zoom={zoom}
-      scrollWheelZoom={true}
-      style={{ height: "100%", width: "100%", zIndex: 1 }}
-      zoomControl={false}
-    >
-      <TileLayer
-        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-      />
-      {renderMarkers()}
-      <ZoomControl position="bottomright" />
-    </MapContainer>
+    <>
+      <MapContainer
+        center={center}
+        zoom={zoom}
+        scrollWheelZoom={true}
+        style={{ height: "100%", width: "100%", zIndex: 1 }}
+        zoomControl={false}
+      >
+        <Search markers={markers} />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        {renderMarkers()}
+        <ZoomControl position="bottomright" />
+      </MapContainer>
+    </>
   );
 };
 
