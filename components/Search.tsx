@@ -28,7 +28,7 @@ export default function Search(Search: SearchProps) {
   const map = useMap();
 
   return (
-    <div className="absolute z-[1000] w-1/3 h-20 p-2">
+    <div className="absolute z-[1000] w-1/5 h-20 m-4">
       <Select
         onValueChange={(event) => {
           map.setView(markers[parseInt(event)].coordinates, 12);
@@ -37,7 +37,7 @@ export default function Search(Search: SearchProps) {
         }}
       >
         <SelectTrigger>
-          <SelectValue placeholder="Select location" className="text-lg" />
+          <SelectValue placeholder="Select airport"/>
         </SelectTrigger>
         <SelectContent>{renderOptions()}</SelectContent>
       </Select>
