@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Location 1",
+        "coordinates": [
+            40,
+            2
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Location 2",
+        "coordinates": [
+            40,
+            0
+        ]
+    }
+]
