@@ -1,12 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { LatLngExpression, LatLngTuple } from "leaflet";
-
-interface Location {
-  id: number;
-  name: string;
-  coordinates: LatLngExpression | LatLngTuple;
-}
+import type { Location } from "@/lib/types";
 
 interface InfoProps {
   location: number;

@@ -7,14 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { LatLngExpression, LatLngTuple } from "leaflet";
 import { useMap } from "react-leaflet";
-
-interface Location {
-  id: number;
-  name: string;
-  coordinates: LatLngExpression | LatLngTuple;
-}
+import type { Location } from "@/lib/types";
 
 interface SearchProps {
   markers: Location[];

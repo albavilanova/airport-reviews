@@ -1,13 +1,7 @@
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { promises as fs } from 'fs';
-import { LatLngExpression, LatLngTuple } from "leaflet";
-
-interface Location {
-  id: number;
-  name: string;
-  coordinates: LatLngExpression | LatLngTuple;
-}
+import type { Location } from "@/lib/types";
 
 export default async function Home() {
   const Map = useMemo(

@@ -8,7 +8,6 @@ import {
   ZoomControl,
   useMapEvents,
 } from "react-leaflet";
-import { LatLngExpression, LatLngTuple } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
@@ -16,12 +15,8 @@ import "leaflet-defaulticon-compatibility";
 import Search from "@/components/Search";
 import Info from "@/components/Info";
 import { useState } from "react";
-
-interface Location {
-  id: number;
-  name: string;
-  coordinates: LatLngExpression | LatLngTuple;
-}
+import type { Location } from "@/lib/types";
+import { LatLngExpression, LatLngTuple } from "leaflet";
 
 interface MapProps {
   markers: Location[];
