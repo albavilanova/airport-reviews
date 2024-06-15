@@ -3,7 +3,8 @@ import { cn } from "@/lib/utils";
 import type { Location } from "@/lib/types";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Button } from "@/components/ui/button";
-import { XCircleIcon } from "@heroicons/react/24/outline";
+import { XCircleIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
+import Rating from "@/components/Rating";
 
 interface InfoProps {
   location: number;
@@ -61,9 +62,13 @@ export default function Info(Info: InfoProps) {
       {reviewsVisibility ? (
         <div>
           <h3 className="font-medium p-2">Reviews</h3>
-          <Button className="flex justify-center bg-sky-100 text-sky-700 hover:bg-sky-200">
-            Write a review
-          </Button>
+          <Rating />
+          <div className="flex justify-center">
+            <Button className="bg-sky-100 text-sky-700 hover:bg-sky-200">
+              <PencilSquareIcon className="h-6 w-6 mr-2 text-sky-700 bg:text-sky-900" />{" "}
+              Write a review
+            </Button>
+          </div>
         </div>
       ) : null}
       {imagesVisibility ? <div>Images</div> : null}
