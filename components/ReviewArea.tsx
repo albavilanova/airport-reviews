@@ -4,7 +4,7 @@ import { getPeriod } from "@/lib/utils";
 interface ReviewsProps {
   reviews: Review[];
 }
-export default function Reviews(Review: ReviewsProps) {
+export default function ReviewArea(Review: ReviewsProps) {
   const { reviews } = Review;
   const renderReviews = () => {
     return reviews.map((review: Review) => {

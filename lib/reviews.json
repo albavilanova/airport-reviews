@@ -5,7 +5,7 @@
         "rating": 4,
         "comment": "Barcelona Airport is really big, but it's easy to find your way around. You won't get lost because there are signs everywhere. It's super convenient with lots of shops and places to eat. You can buy snacks or souvenirs, or just relax before your flight",
         "date": "2024-04-12T13:37:27+02:00",
-        "user": "jabraham"
+        "username": "jabraham"
     },
     {
         "id": 1,
@@ -13,7 +13,7 @@
         "rating": 2,
         "comment": "Barcelona Airport is really big, but it's easy to find your way around. You won't get lost because there are signs everywhere. It's super convenient with lots of shops and places to eat. You can buy snacks or souvenirs, or just relax before your flight",
         "date": "2024-06-12T13:37:27+02:00",
-        "user": "jabraham"
+        "username": "jabraham"
     },
     {
         "id": 2,
@@ -21,6 +21,6 @@
         "rating": 3,
         "comment": "Barcelona Airport is really big, but it's easy to find your way around. You won't get lost because there are signs everywhere. It's super convenient with lots of shops and places to eat. You can buy snacks or souvenirs, or just relax before your flight",
         "date": "2022-06-12T13:37:27+02:00",
-        "user": "jabraham"
+        "username": "jabraham"
     }
 ]

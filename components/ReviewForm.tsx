@@ -1,0 +1,61 @@
+"use client";
+
+import { actionAddReview } from "@/actions/reviews";
+import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
+export default function ReviewForm() {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const addReview = async (formData: FormData) => {
+    formRef.current?.reset();
+    await actionAddReview(formData);
+  };
+
+  return (
+    <form ref={formRef} action={addReview} className="mt-2">
+      <RadioGroup defaultValue="5" name="rating" className="flex justify-center m-3">
+        <div className="flex items-center space-x-2">          
+          <RadioGroupItem value="1" id="1" />
+          <Label htmlFor="1">1</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="2" id="2"/>
+          <Label htmlFor="2">2</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="3" id="3" />
+          <Label htmlFor="3">3</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="4" id="4" />
+          <Label htmlFor="4">4</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="5" id="5" />
+          <Label htmlFor="5">5</Label>
+        </div>
+      </RadioGroup>
+      <input
+        type="text"
+        name="username"
+        placeholder="Write your username"
+        className="border border-slate-300 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
+      />
+      <textarea
+        name="text"
+        rows={10}
+        cols={48}
+        placeholder="Share the details of your experience in this place here..."
+        className="border border-slate-30 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
+      ></textarea>
+      <div className="flex justify-end">
+        <Button className="bg-sky-100 text-sky-700 hover:bg-sky-200 text-lg">
+          Post
+        </Button>
+      </div>
+    </form>
+  );
+}

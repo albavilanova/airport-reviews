@@ -25,7 +25,11 @@ export function getPeriod(date: string) {
     return years.toString() + " years ago";
   } else if (months > 0) {
     return months.toString() + " months ago";
-  } else {
+  } else if (days > 1) {
     return days.toString() + " days ago";
+  } else if (days === 1) {
+    return "Yesterday";
+  } else {
+    return "Today";
   }
 }

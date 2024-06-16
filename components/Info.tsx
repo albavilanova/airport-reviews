@@ -13,8 +13,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Rating from "@/components/Rating";
-import ReviewsForm from "@/components/ReviewsForm";
-import Reviews from "@/components/Reviews";
+import ReviewForm from "@/components/ReviewForm";
+import ReviewArea from "@/components/ReviewArea";
 import type { Review } from "@/lib/types";
 
 interface InfoProps {
@@ -32,7 +32,7 @@ export default function Info(Info: InfoProps) {
   return (
     <div
       className={cn(
-        "absolute z-[1000] bg-white w-1/3 h-screen right-0 overflow-auto",
+        "absolute z-[2] bg-white w-1/3 h-screen right-0 overflow-auto",
         "p-4 text-base"
       )}
     >
@@ -86,13 +86,13 @@ export default function Info(Info: InfoProps) {
                 <DialogHeader>
                   <DialogTitle>Review {markers[location].name}</DialogTitle>
                   <DialogDescription>
-                    <ReviewsForm />
+                    <ReviewForm />
                   </DialogDescription>
                 </DialogHeader>
               </DialogContent>
             </Dialog>
           </div>
-          <Reviews reviews={reviews} />
+          <ReviewArea reviews={reviews} />
         </div>
       ) : null}
       {imagesVisibility ? <div>Images</div> : null}

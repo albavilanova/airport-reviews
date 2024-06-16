@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
 import { useMap } from "react-leaflet";
 import type { Location } from "@/lib/types";
 
@@ -29,7 +30,7 @@ export default function Search(Search: SearchProps) {
   };
   const map = useMap();
   return (
-    <div className="absolute z-[1000] w-1/5 h-20 m-4">
+    <div className="absolute z-[1000] w-1/5 m-4">
       <Select
         onValueChange={(event) => {
           const coordinates = [
