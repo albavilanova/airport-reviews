@@ -11,7 +11,7 @@ interface ReviewFormProps {
 }
 
 export default function ReviewForm(ReviewForm: ReviewFormProps) {
-  const {location} = ReviewForm;
+  const { location } = ReviewForm;
   const formRef = useRef<HTMLFormElement>(null);
 
   const addReview = async (formData: FormData) => {
@@ -49,8 +49,14 @@ export default function ReviewForm(ReviewForm: ReviewFormProps) {
       </RadioGroup>
       <input
         type="text"
-        name="username"
-        placeholder="Write your username"
+        name="firstName"
+        placeholder="First name"
+        className="border border-slate-300 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
+      />
+      <input
+        type="text"
+        name="lastName"
+        placeholder="Last name"
         className="border border-slate-300 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
       />
       <textarea
@@ -61,7 +67,7 @@ export default function ReviewForm(ReviewForm: ReviewFormProps) {
         className="border border-slate-30 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
       ></textarea>
       <div className="flex justify-end">
-        <Button className="bg-sky-100 text-sky-700 hover:bg-sky-200 text-lg">
+        <Button className="bg-sky-100 text-sky-700 hover:bg-sky-200 text-xl">
           Post
         </Button>
       </div>

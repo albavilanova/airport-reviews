@@ -12,7 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import Rating from "@/components/Rating";
+import LocationRating from "@/components/LocationRating";
 import ReviewForm from "@/components/ReviewForm";
 import ReviewArea from "@/components/ReviewArea";
 import type { Review } from "@/lib/types";
@@ -50,7 +50,7 @@ export default function Info(Info: InfoProps) {
           <XCircleIcon className="h-6 w-6 mr-2 text-sky-700 bg:text-sky-900" />
         </Button>
       </div>
-      <h1 className="text-center text-lg font-bold p-2">
+      <h1 className="text-center text-xl font-bold p-2">
         {markers[location].name}
       </h1>
       <ToggleGroup type="single">
@@ -61,7 +61,7 @@ export default function Info(Info: InfoProps) {
             setImagesVisibility(false);
           }}
         >
-          <h2 className="text-lg text-sky-700">Reviews</h2>
+          <h2 className="text-l text-sky-700">Reviews</h2>
         </ToggleGroupItem>
         <ToggleGroupItem
           value="images"
@@ -70,17 +70,17 @@ export default function Info(Info: InfoProps) {
             setImagesVisibility(true);
           }}
         >
-          <h2 className="text-lg text-sky-700">Images</h2>
+          <h2 className="text-l text-sky-700">Images</h2>
         </ToggleGroupItem>
       </ToggleGroup>
       {reviewsVisibility ? (
         <div>
           <h3 className="font-medium p-2">Reviews</h3>
-          <Rating reviews={locationReviews} />
+          <LocationRating reviews={locationReviews} />
           <div className="flex justify-center">
             <Dialog>
               <DialogTrigger>
-                <Button className="bg-sky-100 text-sky-700 hover:bg-sky-200 text-lg">
+                <Button className="bg-sky-100 text-sky-700 hover:bg-sky-200 text-base">
                   <PencilSquareIcon className="h-6 w-6 mr-2 text-sky-700 bg:text-sky-900" />{" "}
                   Write a review
                 </Button>

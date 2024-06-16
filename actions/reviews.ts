@@ -4,9 +4,14 @@ import { addReview, getReviews } from "@/lib/reviews";
 import { revalidatePath } from "next/cache";
 
 export async function actionAddReview(formData: FormData, location: number) {
-  const usernameField = formData.get("username");
-  if (usernameField === null) {
-    throw new Error(`Missing "username" field`);
+  const firstNameField = formData.get("firstName");
+  if (firstNameField === null) {
+    throw new Error(`Missing "firstName" field`);
+  }
+
+  const lastNameField = formData.get("lastName");
+  if (lastNameField === null) {
+    throw new Error(`Missing "lastName" field`);
   }
 
   const ratingField = formData.get("rating");
@@ -26,7 +31,8 @@ export async function actionAddReview(formData: FormData, location: number) {
     rating: parseInt(ratingField.toString()),
     comment: textField.toString(),
     date: new Date().toISOString(),
-    username: usernameField.toString(),
+    firstName: firstNameField.toString(),
+    lastName: lastNameField.toString()
   };
   addReview(review);
 

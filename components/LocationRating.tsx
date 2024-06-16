@@ -15,7 +15,7 @@ function countOccurrance(reviews: Review[], value: number) {
   return count;
 }
 
-export default function Rating(Rating: RatingProps) {
+export default function LocationRating(Rating: RatingProps) {
   const { reviews } = Rating;
   const countFive = countOccurrance(reviews, 5);
   const countFour = countOccurrance(reviews, 4);

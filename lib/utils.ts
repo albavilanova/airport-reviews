@@ -22,9 +22,17 @@ export function getPeriod(date: string) {
   months += d2.getMonth();
 
   if (years > 0) {
-    return years.toString() + " years ago";
+    if (years === 1) {
+      return years.toString() + " year ago";
+    } else {
+      return years.toString() + " years ago";
+    }
   } else if (months > 0) {
-    return months.toString() + " months ago";
+    if (months === 1) {
+      return months.toString() + " month ago";
+    } else {
+      return months.toString() + " months ago";
+    }      
   } else if (days > 1) {
     return days.toString() + " days ago";
   } else if (days === 1) {
