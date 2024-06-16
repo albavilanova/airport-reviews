@@ -73,7 +73,7 @@ export default function Info(Info: InfoProps) {
       {reviewsVisibility ? (
         <div>
           <h3 className="font-medium p-2">Reviews</h3>
-          <Rating />
+          <Rating reviews={reviews}/>
           <div className="flex justify-center">
             <Dialog>
               <DialogTrigger>

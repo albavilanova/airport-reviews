@@ -11,7 +11,7 @@ export default function ReviewArea(Review: ReviewsProps) {
     return orderedReviews.map((review: Review) => {
       return (
         <div className="flex flex-col gap-2 border-2 rounded p-2 m-2">
-          <div>{review.user}</div>
+          <div>{review.username}</div>
           <div>{getPeriod(review.date)}</div>
           <div>{review.comment}</div>
         </div>

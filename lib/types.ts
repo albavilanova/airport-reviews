@@ -13,5 +13,5 @@ export type Review = {
   rating: number;
   comment: string;
   date: string;
-  user: string;
+  username: string;
 }
