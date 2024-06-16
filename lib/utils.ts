@@ -33,3 +33,16 @@ export function getPeriod(date: string) {
     return "Today";
   }
 }
+
+export function sortByKey(array: any, key: string, reverse: boolean) {
+  const sortedArray = array.sort(function (a: any, b: any) {
+    var x = a[key];
+    var y = b[key];
+    return x < y ? -1 : x > y ? 1 : 0;
+  });
+  if (reverse) {
+    return sortedArray.reverse();
+  } else {
+    return sortedArray;
+  }
+}
