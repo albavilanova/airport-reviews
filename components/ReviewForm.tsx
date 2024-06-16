@@ -3,26 +3,35 @@
 import { actionAddReview } from "@/actions/reviews";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-export default function ReviewForm() {
+interface ReviewFormProps {
+  location: number;
+}
+
+export default function ReviewForm(ReviewForm: ReviewFormProps) {
+  const {location} = ReviewForm;
   const formRef = useRef<HTMLFormElement>(null);
 
   const addReview = async (formData: FormData) => {
     formRef.current?.reset();
-    await actionAddReview(formData);
+    await actionAddReview(formData, location);
   };
 
   return (
     <form ref={formRef} action={addReview} className="mt-2">
-      <RadioGroup defaultValue="5" name="rating" className="flex justify-center m-3">
-        <div className="flex items-center space-x-2">          
+      <RadioGroup
+        defaultValue="5"
+        name="rating"
+        className="flex justify-center m-3"
+      >
+        <div className="flex items-center space-x-2">
           <RadioGroupItem value="1" id="1" />
           <Label htmlFor="1">1</Label>
         </div>
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="2" id="2"/>
+          <RadioGroupItem value="2" id="2" />
           <Label htmlFor="2">2</Label>
         </div>
         <div className="flex items-center space-x-2">

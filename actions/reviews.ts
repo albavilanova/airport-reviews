@@ -3,8 +3,7 @@
 import { addReview, getReviews } from "@/lib/reviews";
 import { revalidatePath } from "next/cache";
 
-export async function actionAddReview(formData: FormData) {
-
+export async function actionAddReview(formData: FormData, location: number) {
   const usernameField = formData.get("username");
   if (usernameField === null) {
     throw new Error(`Missing "username" field`);
@@ -23,11 +22,11 @@ export async function actionAddReview(formData: FormData) {
   let reviews = await getReviews();
   var review = {
     id: reviews.length,
-    locationId: 12,
+    locationId: location,
     rating: parseInt(ratingField.toString()),
     comment: textField.toString(),
     date: new Date().toISOString(),
-    user: usernameField.toString(),
+    username: usernameField.toString(),
   };
   addReview(review);
 

@@ -89,7 +89,7 @@ export default function Info(Info: InfoProps) {
                 <DialogHeader>
                   <DialogTitle>Review {markers[location].name}</DialogTitle>
                   <DialogDescription>
-                    <ReviewForm />
+                    <ReviewForm location={location} />
                   </DialogDescription>
                 </DialogHeader>
               </DialogContent>
