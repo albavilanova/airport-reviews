@@ -28,12 +28,15 @@ export default function Search(Search: SearchProps) {
     });
   };
   const map = useMap();
-
   return (
     <div className="absolute z-[1000] w-1/5 h-20 m-4">
       <Select
         onValueChange={(event) => {
-          map.setView(markers[parseInt(event)].coordinates, 12);
+          const coordinates = [
+            markers[parseInt(event)].coordinates[0],
+            markers[parseInt(event)].coordinates[1] + 0.1,
+          ];
+          map.setView(coordinates, 12);
           setInfoVisibility(true);
           setLocation(parseInt(event));
         }}

@@ -20,9 +20,7 @@ export default async function Home() {
   
   return (
     <main>
-      <div className="w-[100%] h-screen">
-        <Map markers={markers} reviews={reviews} />
-      </div>
+      <Map markers={markers} reviews={reviews} />
     </main>
   );
 }

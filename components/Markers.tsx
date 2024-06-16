@@ -17,6 +17,7 @@ export default function Markers(Markers: MarkersProps) {
   const { markers, setInfoVisibility, setLocation } = Markers;
   const map = useMap();
   return markers.map((location: Location) => {
+    const coordinates = [location.coordinates[0], location.coordinates[1]+0.1]
     return (
       <Marker
         key={location.id}
@@ -26,7 +27,7 @@ export default function Markers(Markers: MarkersProps) {
           click: () => {
             setInfoVisibility(true);
             setLocation(location.id);
-            map.setView(location.coordinates, 12);
+            map.setView(coordinates, 12);
           },
         }}
         icon={airportIcon}

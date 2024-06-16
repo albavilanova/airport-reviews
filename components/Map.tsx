@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  MapContainer,
-  TileLayer,
-  ZoomControl,
-} from "react-leaflet";
+import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
@@ -18,7 +14,7 @@ import { LatLngExpression, LatLngTuple } from "leaflet";
 
 interface MapProps {
   markers: Location[];
-  reviews: Review[]
+  reviews: Review[];
 }
 
 export default function Map(Map: MapProps) {
@@ -29,12 +25,16 @@ export default function Map(Map: MapProps) {
   const [location, setLocation] = useState<number | null>(null);
 
   return (
-    <>
+    <div className="w-[100%] flex h-screen">
       <MapContainer
         center={center}
         zoom={zoom}
         scrollWheelZoom={true}
-        style={{ height: "100%", width: "100%", zIndex: 1 }}
+        style={{
+          height: "100%",
+          width: "100%",
+          zIndex: 1,
+        }}
         zoomControl={false}
         zoomSnap={0.1}
         minZoom={zoom}
@@ -44,15 +44,6 @@ export default function Map(Map: MapProps) {
           setInfoVisibility={setInfoVisibility}
           setLocation={setLocation}
         />
-        {infoVisibility && location != null ? (
-          <Info
-            location={location}
-            markers={markers}
-            reviews={reviews}
-            setInfoVisibility={setInfoVisibility}
-            setLocation={setLocation}
-          />
-        ) : null}
         <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
         <Markers
           markers={markers}
@@ -61,6 +52,15 @@ export default function Map(Map: MapProps) {
         />
         <ZoomControl position="bottomleft" />
       </MapContainer>
-    </>
+      {infoVisibility && location != null ? (
+        <Info
+          location={location}
+          markers={markers}
+          reviews={reviews}
+          setInfoVisibility={setInfoVisibility}
+          setLocation={setLocation}
+        />
+      ) : null}
+    </div>
   );
 }

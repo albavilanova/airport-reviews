@@ -32,7 +32,7 @@ export default function Info(Info: InfoProps) {
   return (
     <div
       className={cn(
-        "absolute z-[1000] bg-white w-1/3 h-full right-0",
+        "absolute z-[1000] bg-white w-1/3 h-screen right-0 overflow-auto",
         "p-4 text-base"
       )}
     >
