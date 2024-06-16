@@ -29,6 +29,9 @@ export default function Info(Info: InfoProps) {
   const { location, markers, reviews, setInfoVisibility, setLocation } = Info;
   const [reviewsVisibility, setReviewsVisibility] = useState<boolean>(true);
   const [imagesVisibility, setImagesVisibility] = useState<boolean>(false);
+  const locationReviews = reviews.filter((f) =>
+    [{ locationId: location }].some((s) => f["locationId"] == s["locationId"])
+  );
   return (
     <div
       className={cn(
@@ -73,7 +76,7 @@ export default function Info(Info: InfoProps) {
       {reviewsVisibility ? (
         <div>
           <h3 className="font-medium p-2">Reviews</h3>
-          <Rating reviews={reviews}/>
+          <Rating reviews={locationReviews} />
           <div className="flex justify-center">
             <Dialog>
               <DialogTrigger>
@@ -92,7 +95,7 @@ export default function Info(Info: InfoProps) {
               </DialogContent>
             </Dialog>
           </div>
-          <ReviewArea reviews={reviews} />
+          <ReviewArea reviews={locationReviews} />
         </div>
       ) : null}
       {imagesVisibility ? <div>Images</div> : null}
