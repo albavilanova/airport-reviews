@@ -1,29 +1,32 @@
 [
-    {
-        "id": 0,
-        "locationId": 12,
-        "rating": 5,
-        "comment": "Barcelona Airport is really big, but it's easy to find your way around. You won't get lost because there are signs everywhere. It's super convenient with lots of shops and places to eat. You can buy snacks or souvenirs, or just relax before your flight.",
-        "date": "2024-04-18T00:00:00+02:00",
-        "firstName": "John",
-        "lastName": "Abraham"
-    },
-    {
-        "id": 1,
-        "locationId": 12,
-        "rating": 5,
-        "comment": "Simple, modern, and easy to understand the whole airport. It is located near to the city so that is very convenient to get there even by public transport. All of the facilities and services are just in the right place and taking off or layover here is a very good experience.",
-        "date": "2024-05-16T00:00:00+02:00",
-        "firstName": "Ales",
-        "lastName": "Tvrdy"
-    },
-    {
-        "id": 2,
-        "locationId": 12,
-        "rating": 4,
-        "comment": "The overall experience at the Barcelona airport is commendable, with its user-friendly interface, efficient bag retrieval, and welcoming staff.",
-        "date": "2024-02-12T00:00:00+02:00",
-        "firstName": "George",
-        "lastName": "Eidmouni"
-    }
+  {
+    "id": 0,
+    "locationId": 12,
+    "rating": 5,
+    "comment": "Barcelona Airport is really big, but it's easy to find your way around. You won't get lost because there are signs everywhere. It's super convenient with lots of shops and places to eat. You can buy snacks or souvenirs, or just relax before your flight.",
+    "date": "2024-04-18T00:00:00+02:00",
+    "firstName": "John",
+    "lastName": "Abraham",
+    "images": []
+  },
+  {
+    "id": 1,
+    "locationId": 12,
+    "rating": 5,
+    "comment": "Simple, modern, and easy to understand the whole airport. It is located near to the city so that is very convenient to get there even by public transport. All of the facilities and services are just in the right place and taking off or layover here is a very good experience.",
+    "date": "2024-05-16T00:00:00+02:00",
+    "firstName": "Ales",
+    "lastName": "Tvrdy",
+    "images": []
+  },
+  {
+    "id": 2,
+    "locationId": 12,
+    "rating": 4,
+    "comment": "The overall experience at the Barcelona airport is commendable, with its user-friendly interface, efficient bag retrieval, and welcoming staff.",
+    "date": "2024-02-12T00:00:00+02:00",
+    "firstName": "George",
+    "lastName": "Eidmouni",
+    "images": []
+  }
 ]

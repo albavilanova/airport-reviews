@@ -15,4 +15,5 @@ export type Review = {
   date: string;
   firstName: string;
   lastName: string;
+  images: string[];
 }

@@ -47,24 +47,42 @@ export default function ReviewForm(ReviewForm: ReviewFormProps) {
           <Label htmlFor="5">5</Label>
         </div>
       </RadioGroup>
-      <input
-        type="text"
-        name="firstName"
-        placeholder="First name"
-        className="border border-slate-300 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
-      />
-      <input
-        type="text"
-        name="lastName"
-        placeholder="Last name"
-        className="border border-slate-300 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
-      />
+      <div className="flex flex-cols-2 mb-3">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name"
+          className="w-full border border-slate-300 p-2 rounded focus:outline-1 focus:outline-sky-200 mr-1"
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          className="w-full border border-slate-300 p-2 rounded focus:outline-1 focus:outline-sky-200"
+        />
+      </div>
+      <div className="flex">
+        <label
+          htmlFor="images"
+          className="text-center w-full bg-slate-100 hover:bg-slate-200 text-sm p-2 border-1 rounded border-slate-600"
+        >
+          Upload images
+        </label>
+        <input
+          type="file"
+          name="images"
+          id="images"
+          className="hidden"
+          multiple={true}
+          accept="image/*"
+        ></input>
+      </div>
       <textarea
         name="text"
         rows={10}
-        cols={48}
+        cols={50}
         placeholder="Share the details of your experience in this place here..."
-        className="border border-slate-30 p-1 mb-2 rounded focus:outline-1 focus:outline-sky-200"
+        className="w-full border border-slate-30 p-2 mb-3 mt-3 rounded focus:outline-1 focus:outline-sky-200 grow"
       ></textarea>
       <div className="flex justify-end">
         <Button className="bg-sky-100 text-sky-700 hover:bg-sky-200 text-xl">
