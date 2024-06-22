@@ -73,7 +73,7 @@ export default function ReviewForm(ReviewForm: ReviewFormProps) {
           name="images"
           id="images"
           className="hidden"
-          multiple={true}
+          multiple
           accept="image/*"
         ></input>
       </div>

@@ -28,5 +28,18 @@
     "firstName": "George",
     "lastName": "Eidmouni",
     "images": []
+  },
+  {
+    "id": 3,
+    "locationId": 12,
+    "rating": 5,
+    "comment": "Beautiful and very organized.",
+    "date": "2024-06-22T21:02:19.440Z",
+    "firstName": "Alba",
+    "lastName": "Vilanova",
+    "images": [
+      "/images/7590769e-d747-4cc1-a584-f5c1600dfcac.jpg",
+      "/images/df6a8456-003b-49f5-96a3-a47edb483e71.jpg"
+    ]
   }
 ]

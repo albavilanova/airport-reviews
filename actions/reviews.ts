@@ -2,7 +2,7 @@
 
 import { addReview, getReviews } from "@/lib/reviews";
 import { Review } from "@/lib/types";
-import { writeFile } from "fs";
+import { writeFileSync } from "fs";
 import { revalidatePath } from "next/cache";
 import { v4 as uuidv4 } from "uuid";
 
@@ -36,22 +36,21 @@ export async function actionAddReview(formData: FormData, location: number) {
     date: new Date().toISOString(),
     firstName: firstNameField.toString(),
     lastName: lastNameField.toString(),
-    images: []
+    images: [],
   };
 
-  const imagesField = formData.get("images") as File;
+  const imagesField = formData.getAll("images") as File[];
   if (imagesField !== null) {
-    const data = new Int8Array(await imagesField.arrayBuffer());
-    const fileName = uuidv4() + "." + imagesField.name.split(".").pop()?.toLowerCase();
-    writeFile("public/images/" + fileName, data, "binary", (err) => {
-      if (err) {
-        console.error("Error:", err);
-      } else {
-        review["images"].push("/images/" + fileName);
-      }
-    });
+    for (const image of imagesField) {
+      var data = new Int8Array(await image.arrayBuffer());
+      var fileName =
+        uuidv4() + "." + image.name.split(".").pop()?.toLowerCase();
+      writeFileSync("public/images/" + fileName, data, "binary");
+      review["images"].push("/images/" + fileName);
+    }
   }
 
+  console.log(review);
   addReview(review);
   revalidatePath("/");
 }
