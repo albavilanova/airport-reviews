@@ -2,10 +2,10 @@ import type { Review } from "@/lib/types";
 import { getPeriod, sortByKey } from "@/lib/utils";
 import ReviewRating from "@/components/ReviewRating";
 import Image from "next/image";
-
 interface ReviewsProps {
   reviews: Review[];
 }
+
 export default function ReviewArea(Review: ReviewsProps) {
   const { reviews } = Review;
   const orderedReviews = sortByKey(reviews, "date", true);
@@ -17,16 +17,10 @@ export default function ReviewArea(Review: ReviewsProps) {
           key={review.id}
           className="flex flex-col gap-2 border-2 rounded p-2 m-2"
         >
-          <div className="flex gap-2 wrap">
+          <div className="flex gap-2">
             {review.images.length > 0
               ? review.images.map((image: string) => (
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "150px",
-                      height: "150px",
-                    }}
-                  >
+                  <div className="w-[150px] h-[150px] relative flex-shrink-0">
                     <Image
                       key={image}
                       layout="fill"
