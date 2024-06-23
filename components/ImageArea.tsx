@@ -18,13 +18,7 @@ export default function ImageArea(Review: ReviewsProps) {
           {review.images.length > 0
             ? review.images.map((image: string) => (
                 <div className="relative">
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "auto",
-                      height: "200px",
-                    }}
-                  >
+                  <div className="w-auto h-[200px] relative">
                     <Image
                       key={image}
                       layout="fill"

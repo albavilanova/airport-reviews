@@ -6,6 +6,12 @@ interface ReviewsProps {
   reviews: Review[];
 }
 
+const horizontalScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+  e.preventDefault();
+  const container = e.currentTarget;
+  container.scrollLeft += e.deltaY;
+}
+
 export default function ReviewArea(Review: ReviewsProps) {
   const { reviews } = Review;
   const orderedReviews = sortByKey(reviews, "date", true);
@@ -17,10 +23,10 @@ export default function ReviewArea(Review: ReviewsProps) {
           key={review.id}
           className="flex flex-col gap-2 border-2 rounded p-2 m-2"
         >
-          <div className="flex gap-2">
+          <div className="flex gap-2 overflow-x-auto" onWheel={horizontalScroll}>
             {review.images.length > 0
               ? review.images.map((image: string) => (
-                  <div className="w-[150px] h-[150px] relative flex-shrink-0">
+                  <div className="w-[150px] h-[150px] relative flex-shrink-0 ">
                     <Image
                       key={image}
                       layout="fill"
