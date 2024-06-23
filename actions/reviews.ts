@@ -46,8 +46,8 @@ export async function actionAddReview(formData: FormData, location: number) {
         var data = new Int8Array(await image.arrayBuffer());
         var fileName =
           uuidv4() + "." + image.name.split(".").pop()?.toLowerCase();
-        writeFileSync("public/images/" + fileName, data, "binary");
-        review["images"].push("/images/" + fileName);
+        writeFileSync("public/images/reviews/" + fileName, data, "binary");
+        review["images"].push("/images/reviews/" + fileName);
       }
     }
   }

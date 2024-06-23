@@ -6,7 +6,8 @@
 		"coordinates": [
 			40.489507,
 			-3.564448
-		]
+		],
+		"src": "/images/locations/barajas-airport.jpg"
 	},
 	{
 		"id": 1,
@@ -114,7 +115,8 @@
 		"coordinates": [
 			41.29822,
 			2.080074
-		]
+		],
+		"src": "/images/locations/barcelona-airport.jpg"
 	},
 	{
 		"id": 13,
@@ -195,7 +197,8 @@
 		"coordinates": [
 			39.5517407,
 			2.7361649
-		]
+		],
+		"src": "/images/locations/mallorca-airport.jpg"
 	},
 	{
 		"id": 22,
