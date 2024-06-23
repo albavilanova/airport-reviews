@@ -15,6 +15,7 @@ import {
 import LocationRating from "@/components/LocationRating";
 import ReviewForm from "@/components/ReviewForm";
 import ReviewArea from "@/components/ReviewArea";
+import ImageArea from "@/components/ImageArea";
 import type { Review } from "@/lib/types";
 
 interface InfoProps {
@@ -32,6 +33,7 @@ export default function Info(Info: InfoProps) {
   const locationReviews = reviews.filter((f) =>
     [{ locationId: location }].some((s) => f["locationId"] == s["locationId"])
   );
+  const [value, setValue] = React.useState("reviews");
   return (
     <div
       className={cn(
@@ -53,7 +55,13 @@ export default function Info(Info: InfoProps) {
       <h1 className="text-center text-xl font-bold p-2">
         {markers[location].name}
       </h1>
-      <ToggleGroup type="single">
+      <ToggleGroup
+        type="single"
+        value={value}
+        onValueChange={(value) => {
+          if (value) setValue(value);
+        }}
+      >
         <ToggleGroupItem
           value="reviews"
           onClick={() => {
@@ -75,7 +83,6 @@ export default function Info(Info: InfoProps) {
       </ToggleGroup>
       {reviewsVisibility ? (
         <div>
-          <h3 className="font-medium p-2">Reviews</h3>
           <LocationRating reviews={locationReviews} />
           <div className="flex justify-center">
             <Dialog>
@@ -98,7 +105,11 @@ export default function Info(Info: InfoProps) {
           <ReviewArea reviews={locationReviews} />
         </div>
       ) : null}
-      {imagesVisibility ? <div>Images</div> : null}
+      {imagesVisibility ? (
+        <div>
+          <ImageArea reviews={locationReviews} />
+        </div>
+      ) : null}
     </div>
   );
 }
