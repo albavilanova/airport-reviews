@@ -61,6 +61,7 @@ export default function Info(Info: InfoProps) {
         onValueChange={(value) => {
           if (value) setValue(value);
         }}
+        className="p-2"
       >
         <ToggleGroupItem
           value="reviews"

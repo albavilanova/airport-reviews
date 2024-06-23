@@ -38,7 +38,7 @@ export default function ReviewArea(Review: ReviewsProps) {
                 ))
               : null}
           </div>
-          <div>
+          <div className="font-medium">
             {review.firstName} {review.lastName}
           </div>
           <div className="flex items-center">
