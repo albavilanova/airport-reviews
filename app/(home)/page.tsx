@@ -72,7 +72,7 @@ export default async function Home() {
         </Link>
       </div>
       <h2 className="text-xl text-center mt-6 mb-4 font-medium text-sky-800">
-        Busiest airports
+        Busiest airports in Spain
       </h2>
       <div className="grid grid-cols-3 gap-4">{renderTopLocations()}</div>
     </main>
