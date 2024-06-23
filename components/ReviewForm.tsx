@@ -53,12 +53,14 @@ export default function ReviewForm(ReviewForm: ReviewFormProps) {
           name="firstName"
           placeholder="First name"
           className="w-full border border-slate-300 p-2 rounded focus:outline-1 focus:outline-sky-200 mr-1"
+          required
         />
         <input
           type="text"
           name="lastName"
           placeholder="Last name"
           className="w-full border border-slate-300 p-2 rounded focus:outline-1 focus:outline-sky-200"
+          required
         />
       </div>
       <div className="flex">

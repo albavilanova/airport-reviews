@@ -42,11 +42,13 @@ export async function actionAddReview(formData: FormData, location: number) {
   const imagesField = formData.getAll("images") as File[];
   if (imagesField !== null) {
     for (const image of imagesField) {
-      var data = new Int8Array(await image.arrayBuffer());
-      var fileName =
-        uuidv4() + "." + image.name.split(".").pop()?.toLowerCase();
-      writeFileSync("public/images/" + fileName, data, "binary");
-      review["images"].push("/images/" + fileName);
+      if (image.size !== 0) {
+        var data = new Int8Array(await image.arrayBuffer());
+        var fileName =
+          uuidv4() + "." + image.name.split(".").pop()?.toLowerCase();
+        writeFileSync("public/images/" + fileName, data, "binary");
+        review["images"].push("/images/" + fileName);
+      }
     }
   }
 
