@@ -16,7 +16,6 @@ interface SelectBoxProps {
 
 export default function SelectBox(SelectBox: SelectBoxProps) {
   const { onValueChange, markers } = SelectBox;
-  console.log(typeof(onValueChange));
   const renderOptions = () => {
     return markers.map((location: Location) => {
       return (
