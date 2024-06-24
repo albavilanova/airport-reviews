@@ -5,6 +5,7 @@ import { Icon } from "leaflet";
 import type { Location } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import { LatLngExpression, LatLngTuple } from "leaflet";
+import { useMediaQuery } from "react-responsive";
 
 interface MarkersProps {
   markers: Location[];
@@ -20,12 +21,16 @@ export default function Markers(Markers: MarkersProps) {
     iconUrl: "../airport.svg",
     iconSize: [25, 55],
   });
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
 
   return markers.map((location: Location) => {
-    const coordinates: LatLngExpression | LatLngTuple = [
+    let coordinates: LatLngExpression | LatLngTuple = [
       location.coordinates[0],
-      location.coordinates[1] + 0.1,
+      location.coordinates[1],
     ];
+    if (!isMobile) {
+      coordinates[1] += 0.1;
+    }
     return (
       <Marker
         key={location.id}

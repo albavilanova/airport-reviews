@@ -59,7 +59,7 @@ export default async function Home() {
   };
 
   return (
-    <main className="p-24 bg-stone-50">
+    <main className="p-6 md:p-24 bg-stone-50">
       <h1 className="text-2xl my-4 font-bold">Airport Reviews</h1>
       <div className="grid grid-rows-2 gap-2">
         <SearchHome markers={markers} />
@@ -74,7 +74,7 @@ export default async function Home() {
       <h2 className="text-xl text-center mt-6 mb-4 font-medium text-sky-800">
         Busiest airports in Spain
       </h2>
-      <div className="grid grid-cols-3 gap-4">{renderTopLocations()}</div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">{renderTopLocations()}</div>
     </main>
   );
 }

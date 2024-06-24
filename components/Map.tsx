@@ -11,6 +11,7 @@ import { useState } from "react";
 import type { Location, Review } from "@/lib/types";
 import { LatLngExpression, LatLngTuple } from "leaflet";
 import { useSearchParams } from "next/navigation";
+import { useMediaQuery } from "react-responsive";
 
 interface MapProps {
   markers: Location[];
@@ -20,6 +21,8 @@ interface MapProps {
 export default function Map(Map: MapProps) {
   const { markers, reviews } = Map;
   const searchLocation = useSearchParams().get("location");
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
+
   let locationId;
   let zoom;
   let center: LatLngExpression | LatLngTuple;
@@ -29,8 +32,11 @@ export default function Map(Map: MapProps) {
     zoom = 12;
     center = [
       markers[locationId].coordinates[0],
-      markers[locationId].coordinates[1] + 0.1,
+      markers[locationId].coordinates[1],
     ];
+    if (!isMobile) {
+      center[1] += 0.1;
+    }
     visibility = true;
   } else {
     locationId = null;
@@ -41,7 +47,6 @@ export default function Map(Map: MapProps) {
   const [location, setLocation] = useState<number | null>(locationId);
   const [infoVisibility, setInfoVisibility] = useState<boolean>(visibility);
 
-  console.log("location", location);
   return (
     <div className="w-[100%] flex h-screen">
       <MapContainer
